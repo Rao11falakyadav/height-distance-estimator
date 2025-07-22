@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Height & Distance Estimator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-blue-900 min-h-screen text-white">
+  <div class="container mx-auto px-4 py-8">
+    <!-- Header -->
+    <header class="text-center mb-8">
+      <h1 class="text-3xl font-bold text-white">AI-Powered Height & Distance Estimator</h1>
+      <p class="text-blue-200 mt-2">Real-time measurements using your device camera</p>
+    </header>
+
+    <!-- Camera & Sidebar -->
+    <div class="flex flex-col md:flex-row gap-6">
+      <!-- Live Camera Feed -->
+      <div class="flex-1 bg-white rounded-lg shadow-lg overflow-hidden">
+        <div class="p-4 bg-blue-700 text-white">
+          <h2 class="text-xl font-semibold">Live Camera Feed</h2>
+        </div>
+
+        <div class="relative">
+          <div class="canvas-container">
+            <canvas id="canvas" class="bg-gray-200 w-full aspect-video"></canvas>
+          </div>
+          <div class="camera-controls p-4 flex gap-4 flex-wrap">
+            <button id="startCamera" class="px-4 py-2 bg-green-600 text-white rounded-full hover:bg-green-700">
+              Start Camera
+            </button>
+            <button id="captureFrame" class="px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700" disabled>
+              Capture Measurement
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="w-full md:w-1/3 space-y-6">
+        <!-- Calibration Settings -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden text-gray-800">
+          <div class="p-4 border-b bg-blue-600 text-white">
+            <h3 class="text-lg font-semibold">Calibration Settings</h3>
+          </div>
+          <div class="p-4 space-y-4">
+            <div>
+              <label class="block text-sm font-medium">Reference Height (cm)</label>
+              <input type="number" id="referenceHeight" value="175" min="100" max="250"
+                class="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3">
+            </div>
+            <div>
+              <label class="block text-sm font-medium">Camera Height (cm)</label>
+              <input type="number" id="cameraHeight" value="100" min="0" max="300"
+                class="mt-1 block w-full border border-gray-300 rounded-md py-2 px-3">
+            </div>
+          </div>
+        </div>
+
+        <!-- Measurement Results -->
+        <!-- <div class="bg-white rounded-lg shadow-lg overflow-hidden text-gray-800">
+          <div class="p-4 bg-purple-700 text-white">
+            <h2 class="text-lg font-semibold">Measurement Results</h2>
+          </div>
+          <div class="p-4 space-y-4">
+            <div>
+              <p class="text-sm text-gray-600">Estimated Height:</p>
+              <p id="heightResult" class="text-2xl font-bold text-purple-700">-- cm</p>
+            </div>
+            <div>
+              <p class="text-sm text-gray-600">Distance From Camera:</p>
+              <p id="distanceResult" class="text-2xl font-bold text-purple-700">-- meters</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden text-gray-800 min-h-[220px]">
+  <div class="p-5 bg-purple-700 text-white">
+    <h2 class="text-2xl font-semibold">Measurement Results</h2>
+  </div>
+  <div class="p-6 space-y-6">
+    <div>
+      <p class="text-base text-gray-700">Estimated Height:</p>
+      <p id="heightResult" class="text-4xl font-bold text-purple-700">-- cm</p>
+    </div>
+    <div>
+      <p class="text-base text-gray-700">Distance From Camera:</p>
+      <p id="distanceResult" class="text-4xl font-bold text-purple-700">-- meters</p>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Instructions -->
+    <div class="bg-white rounded-lg shadow-lg overflow-hidden mt-6 text-gray-800">
+      <div class="p-4 bg-orange-700 text-white">
+        <h2 class="text-xl font-semibold">Instructions</h2>
+      </div>
+      <div class="p-4">
+        <ol class="list-decimal pl-5 space-y-2">
+          <li>Stand straight about 2-3 meters from your device</li>
+          <li>Click "Start Camera" to enable your webcam</li>
+          <li>Adjust reference height if needed</li>
+          <li>Click "Capture Measurement" to get readings</li>
+          <li>For best results, ensure good lighting</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  
+
+
+  <!-- Loading Overlay -->
+  <div id="loadingOverlay" class="loading-overlay hidden fixed inset-0 flex flex-col items-center justify-center bg-white bg-opacity-75 z-50">
+    <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500 mb-4"></div>
+    <p id="loadingMessage" class="text-blue-700 font-semibold">Loading AI models...</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
