@@ -62,14 +62,6 @@ These help in perspective correction and more accurate estimation.
 
 ---
 
-## 🖼️ Add Screenshots
-
-1. Create a folder: `screenshots`
-2. Add images like `banner.png`, `live.png`, `results.png`
-3. Replace the placeholder images above
-
----
-
 ## 🌐 Live Demo (Optional)
 
 > 🚧 Coming Soon via GitHub Pages or Vercel
