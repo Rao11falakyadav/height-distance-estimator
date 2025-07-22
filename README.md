@@ -62,9 +62,9 @@ These help in perspective correction and more accurate estimation.
 
 ---
 
-## 🌐 Live Demo (Optional)
+## 🌐 Live Demo :
 
-> 🚧 Coming Soon via GitHub Pages or Vercel
+> 🚩https://rao11falakyadav.github.io/height-distance-estimator/
 
 ---
 
