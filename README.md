@@ -80,7 +80,7 @@ These help in perspective correction and more accurate estimation.
 
 **Falak Yadav**  
 🎓 AIML Student | 💡 Tech Innovator  
-🔗 [LinkedIn](https://www.linkedin.com/in/rao11falakyadav) | 📂 [Portfolio](#)
+🔗 [LinkedIn](https://www.linkedin.com/in/falak-yadav-a61199241/) | 🧠 [Portfolio](https://rao11falakyadav.github.io/portfolio/)
 
 ---
 
